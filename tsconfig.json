@@ -1,0 +1,23 @@
+//  不可以在package.json里使用type : module字段 ts-node解析不出来export 配置 ts-node
+{
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS",
+      "types": ["node"]
+    }
+  },
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ESNext",
+    "noImplicitAny": true,
+    "outDir": "./dist",
+    "sourceMap": true,
+    "lib": ["es2016", "DOM", "ES2015", "ES2017", "ES2022"],
+    "strict": false,
+    //  配置 ts node环境
+    "esModuleInterop": true,
+    "moduleResolution": "node"
+  },
+  // "include": ["src/**/*"]
+  "exclude": ["node_modules"]
+}
