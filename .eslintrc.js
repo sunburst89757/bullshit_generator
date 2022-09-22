@@ -10,6 +10,7 @@ module.exports = {
   },
   plugins: ["@typescript-eslint", "prettier"],
   rules: {
-    "no-console": "off"
+    "no-console": "off",
+    "import/prefer-default-export": "off"
   }
 };
