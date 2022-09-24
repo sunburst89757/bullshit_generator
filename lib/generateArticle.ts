@@ -8,7 +8,7 @@ import {
 } from "./getCorups";
 import { randomInt } from "./random";
 
-type ITitle =
+export type ITitle =
   | "一天掉多少根头发"
   | "中午吃什么"
   | "学生会退会"
@@ -52,9 +52,3 @@ export function generateArticle(
   }
   return article;
 }
-
-const ar = generateArticle(800, 1200, "一天掉多少根头发");
-ar.forEach((s) => {
-  console.log("\n");
-  console.log(s);
-});

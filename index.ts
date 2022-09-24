@@ -1,7 +1,3 @@
-// import generateArticle from "./lib/generate";
+import saveFile from "./lib/saveFile";
 
-// const article = generateArticle(800, 1200, "一天掉多少根头发");
-// article.forEach((section) => {
-//   console.log("\n");
-//   console.log(section);
-// });
+saveFile("一天掉多少根头发", 800, 1200);
