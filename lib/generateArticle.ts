@@ -7,20 +7,21 @@ import {
   pickSaid
 } from "./getCorups";
 import { randomInt } from "./random";
+import { IFileOption } from "./saveFile";
 
-export type ITitle =
-  | "一天掉多少根头发"
-  | "中午吃什么"
-  | "学生会退会"
-  | "好好学习"
-  | "生活的意义"
-  | "科学和人文谁更有意义"
-  | "熬夜一时爽";
-export function generateArticle(
-  min: number,
-  max: number,
-  title: ITitle
-): string[] {
+// export type ITitle =
+//   | "一天掉多少根头发"
+//   | "中午吃什么"
+//   | "学生会退会"
+//   | "好好学习"
+//   | "生活的意义"
+//   | "科学和人文谁更有意义"
+//   | "熬夜一时爽";
+export function generateArticle({
+  min = 800,
+  max = 1200,
+  title
+}: IFileOption): string[] {
   let totalLength = 0;
   const articleLength = randomInt(min, max);
   const article: string[] = [];
@@ -40,7 +41,7 @@ export function generateArticle(
         });
       } else if (percent < 80) {
         sentence =
-          generateSentence(pickBoshBefore) +
+          generateSentence(pickBoshBefore, { title }) +
           generateSentence(pickBosh, { title });
       } else {
         sentence = generateSentence(pickBosh, { title });

@@ -16,12 +16,15 @@ const fileData = readFileSync(path.resolve(__dirname, "../corpus/data.json"), {
 });
 const corups: CorupsObject = JSON.parse(fileData);
 export default corups;
-const { famous, bosh_before, bosh, conclude, said } = corups;
+const { title, famous, bosh_before, bosh, conclude, said } = corups;
 //  生成随机的获取句子函数
-export const [pickFamous, pickBoshBefore, pickBosh, pickConclude, pickSaid] = [
-  famous,
-  bosh_before,
-  bosh,
-  conclude,
-  said
-].map((corup) => createRandomPick(corup));
+export const [
+  pickTitle,
+  pickFamous,
+  pickBoshBefore,
+  pickBosh,
+  pickConclude,
+  pickSaid
+] = [title, famous, bosh_before, bosh, conclude, said].map((corup) =>
+  createRandomPick(corup)
+);

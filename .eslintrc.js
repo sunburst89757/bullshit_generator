@@ -16,6 +16,7 @@ module.exports = {
     "import/extensions": "off",
     "no-plusplus": "off",
     "no-unused-vars": "warn",
-    camelcase: "off"
+    camelcase: "off",
+    "no-param-reassign": "off"
   }
 };
